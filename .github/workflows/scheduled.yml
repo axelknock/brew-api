@@ -72,3 +72,4 @@ jobs:
           add: 'cask.json'
           message: 'chore: Update api output'
           default_author: github_actions
+          token: ${{ secrets.GITHUB_TOKEN }}
