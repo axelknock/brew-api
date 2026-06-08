@@ -17,7 +17,7 @@ tap = Tap.fetch(tap_name)
 Cask::Cask.generating_hash!
 
 latest_macos = MacOSVersion.new(HOMEBREW_MACOS_NEWEST_SUPPORTED).to_sym
-default_arch = :intel  # NOTE: Change this to :arm if you want arm as default arch.
+default_arch = :arm  # NOTE: Change this to :intel if you want intel as default arch.
 Homebrew::SimulateSystem.with(os: latest_macos, arch: default_arch) do
   tap.cask_files.each do |path|
     cask = Cask::CaskLoader.load(path)
