@@ -1,4 +1,6 @@
 name: Update cask.json
+permissions:
+  contents: write
 on:
   push:
     paths:
