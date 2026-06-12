@@ -50,6 +50,8 @@ jobs:
           # Register all the taps
           for i in "${TAPS[@]}"; do
             brew tap --force ${i}
+            canonical_tap="$(brew tap-info --json "$i" | jq -r '.[0].name')"
+            brew trust "$canonical_tap"
           done
 
           brew update
